@@ -37,8 +37,10 @@ def plotLine(df, savefig=False, fname='pubmed_hit'):
         plt.savefig('{}.pdf'.format(fname), bbox_inches="tight", dpi=600, figsize=(16,14))
     plt.show()
 
-if __name__ == '__main__':
-
+def main():
     ici = ['ipilimumab','nivolumab','pembrolizumab','atezolizumab','durvalumab','tremelimumab','spartalizumab']
     df_ici = getPubmed(drugs=ici)
     plotLine(df_ici, savefig=True, fname='pubmed_ici')
+
+if __name__ == '__main__':
+    main()
