@@ -4,12 +4,15 @@
 Created on Sat Jul  6 23:24:26 2019
 @author: wadat
 """
+import datetime
 import pandas as pd
 import requests
 import matplotlib.pyplot as plt
 
 # Pubmed search
-def getPubmed(drugs, start=2004, end=2019):
+def getPubmed(drugs, start=2004):
+    
+    end = datetime.datetime.now().year
     years = [year for year in range(start, end)]
     df_counts = pd.DataFrame(columns=drugs, index=years)
     for drug in drugs:
